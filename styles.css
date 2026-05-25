@@ -63,7 +63,6 @@ button { font: inherit; cursor: pointer; }
     padding: 0 28px;
 }
 .narrow { max-width: var(--container-narrow); }
-.centered { text-align: center; }
 
 .section {
     position: relative;
@@ -102,6 +101,7 @@ button { font: inherit; cursor: pointer; }
     text-transform: uppercase;
     color: var(--c-text-muted);
     margin: 0 0 20px;
+    text-align: center;
 }
 .eyebrow-light { color: rgba(248, 250, 252, 0.6); }
 
@@ -111,19 +111,18 @@ button { font: inherit; cursor: pointer; }
     font-size: clamp(32px, 4vw, 46px);
     line-height: 1.15;
     letter-spacing: -0.02em;
-    margin: 0 0 28px;
+    margin: 0 auto 28px;
     color: var(--c-text-dark);
     max-width: 760px;
+    text-align: center;
 }
 .section-title.light { color: var(--c-white); }
-.section-head-center { text-align: center; }
-.section-head-center .section-title { margin-left: auto; margin-right: auto; }
 
 .prose p {
     font-size: 17.5px;
     line-height: 1.72;
     color: var(--c-text-dark);
-    margin: 0 0 18px;
+    margin: 0 auto 18px;
     max-width: 68ch;
 }
 .prose p:last-child { margin-bottom: 0; }
@@ -136,6 +135,7 @@ button { font: inherit; cursor: pointer; }
     color: var(--c-text-muted);
     max-width: 64ch;
     margin: 0 auto;
+    text-align: center;
 }
 
 .accent { color: var(--c-blue-light); }
@@ -157,6 +157,7 @@ button { font: inherit; cursor: pointer; }
     background: rgba(7, 17, 31, 0.96);
     border-bottom-color: rgba(255, 255, 255, 0.08);
 }
+.site-header .container { max-width: none; }
 .header-inner {
     display: flex;
     align-items: center;
@@ -426,6 +427,7 @@ button { font: inherit; cursor: pointer; }
 #governance { padding-bottom: 80px; }
 .gov-grid {
     max-width: 640px;
+    margin: 0 auto;
     border-top: 1px solid var(--c-border);
 }
 .gov-item {
