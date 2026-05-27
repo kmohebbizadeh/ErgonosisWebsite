@@ -264,7 +264,12 @@ button { font: inherit; cursor: pointer; }
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(37, 99, 255, 0.4), transparent);
 }
-.hero-content { max-width: 880px; }
+.hero-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 80px;
+    align-items: end;
+}
 
 .pronunciation {
     font-family: var(--f-mono);
@@ -315,7 +320,7 @@ button { font: inherit; cursor: pointer; }
     width: 56px;
     height: 1px;
     background: var(--c-blue);
-    margin: 0 0 28px;
+    margin: 24px 0 0;
     box-shadow: 0 0 12px rgba(37, 99, 255, 0.5);
 }
 
@@ -592,6 +597,11 @@ button { font: inherit; cursor: pointer; }
    Responsive
    ---------------------------------------------------------- */
 @media (max-width: 1023px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 880px;
+    }
     .split,
     .split-gov,
     .split-serve {
