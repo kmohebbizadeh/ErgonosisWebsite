@@ -64,6 +64,22 @@ button { font: inherit; cursor: pointer; }
 }
 .narrow { max-width: var(--container-narrow); }
 
+/* Two-column split layout used on wider screens */
+.split {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 72px;
+    align-items: start;
+}
+.split-gov   { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
+.split-serve { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+
+.split .eyebrow       { text-align: left; }
+.split .section-title { text-align: left; margin-left: 0; margin-right: 0; }
+.split .prose p       { margin-left: 0; margin-right: 0; }
+.split .lead          { text-align: left; margin-left: 0; }
+.split-gov .gov-grid  { margin: 0; max-width: none; }
+
 .section {
     position: relative;
     padding: 112px 0;
@@ -139,6 +155,7 @@ button { font: inherit; cursor: pointer; }
 }
 
 .accent { color: var(--c-blue-light); }
+.nowrap { white-space: nowrap; }
 
 /* ----------------------------------------------------------
    Header
@@ -424,13 +441,9 @@ button { font: inherit; cursor: pointer; }
 /* ----------------------------------------------------------
    Governance grid
    ---------------------------------------------------------- */
-#governance { padding-bottom: 80px; }
 .gov-grid {
-    max-width: 880px;
+    max-width: 640px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 48px;
     border-top: 1px solid var(--c-border);
 }
 .gov-item {
@@ -578,12 +591,29 @@ button { font: inherit; cursor: pointer; }
 /* ----------------------------------------------------------
    Responsive
    ---------------------------------------------------------- */
+@media (max-width: 1023px) {
+    .split,
+    .split-gov,
+    .split-serve {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .split .eyebrow,
+    .split .section-title,
+    .split .prose p,
+    .split .lead {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .split-gov .gov-grid { margin: 0 auto; max-width: 640px; }
+}
+
 @media (max-width: 960px) {
     .section { padding: 88px 0; }
     .hero { padding: 104px 0 120px; }
     .cta { padding: 96px 0; }
     .section-head { margin-bottom: 44px; }
-    #governance { padding-bottom: 64px; }
 
     .card-grid,
     .steps { grid-template-columns: repeat(2, 1fr); }
@@ -596,7 +626,6 @@ button { font: inherit; cursor: pointer; }
     .hero { padding: 88px 0 96px; }
     .cta { padding: 80px 0; }
     .section-head { margin-bottom: 40px; }
-    #governance { padding-bottom: 56px; }
 
     .header-inner { height: 64px; }
     .site-nav {
@@ -637,7 +666,6 @@ button { font: inherit; cursor: pointer; }
 
     .card-grid,
     .steps { grid-template-columns: 1fr; }
-    .gov-grid { grid-template-columns: 1fr; column-gap: 0; max-width: 640px; }
 
     .footer-inner {
         flex-direction: column;
