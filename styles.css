@@ -528,6 +528,23 @@ button { font: inherit; cursor: pointer; }
     color: var(--c-white);
     border-bottom-color: var(--c-white);
 }
+.linkedin-link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 20px auto 0;
+    opacity: 0.72;
+    transition: opacity var(--transition), transform var(--transition);
+}
+.linkedin-link svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.linkedin-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
 .cta-divider {
     width: 80px;
     height: 2px;
